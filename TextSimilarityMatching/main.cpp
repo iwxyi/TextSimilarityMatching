@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
 	QString run_path = QCoreApplication::applicationDirPath();
 	qDebug() << "run path:" << run_path;
 
-	JiabaSegment* js = new JiabaSegment(run_path + "/dict/");
+	JiabaSegment* jieba = new JiabaSegment(run_path + "/dict/");
+	qDebug() << jieba->WordSegment(QStringLiteral("这是一个测试"));
 
 	return a.exec();
 }

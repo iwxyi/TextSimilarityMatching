@@ -32,9 +32,15 @@
     <ClCompile Include="JiabaSegment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ParagraphLocate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="JiabaSegment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParagraphLocate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

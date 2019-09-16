@@ -1,14 +1,14 @@
 #include "JiabaSegment.h"
 
 
-JiabaSegment::JiabaSegment(QString dict_path)
+JiabaSegment::JiabaSegment(QString dict_path) : file_path(dict_path), inited(false)
 {
-	this->file_path = dict_path;
 	init();
 }
 
 JiabaSegment::~JiabaSegment()
 {
+	delete jieba;
 }
 
 bool JiabaSegment::init()
@@ -35,10 +35,25 @@ bool JiabaSegment::init()
 	);
 
 	qDebug() << QStringLiteral("初始化成功");
-	return true;
+	return inited = true;
 }
 
 QStringList JiabaSegment::WordSegment(QString text)
 {
-	return QStringList();
+	QStringList sl;
+	if (!inited)
+		return text.split("");
+
+	vector<string> words;
+	vector<cppjieba::Word> jiebawords;
+
+	jieba->Cut(text.toStdString(), words, true);
+
+	vector<string>::iterator it;
+	for (it = words.begin(); it != words.end(); it++)
+	{
+		sl << QString::fromStdString(*it);
+	}
+
+	return sl;
 }

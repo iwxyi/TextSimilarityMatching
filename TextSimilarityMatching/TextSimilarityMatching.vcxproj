@@ -96,9 +96,11 @@
   <ItemGroup>
     <ClCompile Include="JiabaSegment.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParagraphLocate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="JiabaSegment.h" />
+    <ClInclude Include="ParagraphLocate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

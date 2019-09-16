@@ -19,6 +19,7 @@ public:
 
 private:
 	QString file_path;
+	bool inited;
 
 	cppjieba::Jieba* jieba;
 };
