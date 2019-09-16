@@ -4,7 +4,8 @@
 #include "ParagraphLocate.h"
 
 /*
- * 参考博客：https://www.cnblogs.com/liangjf/p/8283519.html
+ * 参考博客（TF-IDF）：https://www.cnblogs.com/liangjf/p/8283519.html
+ * 测试小说（斗罗大陆）：https://www.81xzw.com/book/110171/
  */
 
 QString readTextFile(QString path)
