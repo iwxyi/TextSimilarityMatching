@@ -1,22 +1,22 @@
 #include "JiabaSegment.h"
 
 
-JiabaSegment::JiabaSegment(QString dict_path) : file_path(dict_path), inited(false)
+JiebaSegment::JiebaSegment(QString dict_path) : file_path(dict_path), inited(false)
 {
 	init();
 }
 
-JiabaSegment::~JiabaSegment()
+JiebaSegment::~JiebaSegment()
 {
 	delete jieba;
 }
 
-bool JiabaSegment::init()
+bool JiebaSegment::init()
 {
 	QDir dir(file_path);
 	if (!dir.exists())
 	{
-		qDebug() << QStringLiteral("词库路径：") << file_path << QStringLiteral("不存在");
+		qDebug() << QStringLiteral("词库路径：") << file_path << QStringLiteral(" 不存在");
 		return false;
 	}
 
@@ -34,11 +34,11 @@ bool JiabaSegment::init()
 		STOP_WORD_PATH.toLatin1().data()
 	);
 
-	qDebug() << QStringLiteral("初始化成功");
+	qDebug() << QStringLiteral("Jieba 分词初始化成功");
 	return inited = true;
 }
 
-QStringList JiabaSegment::WordSegment(QString text)
+QStringList JiebaSegment::WordSegment(QString text)
 {
 	QStringList sl;
 	if (!inited)

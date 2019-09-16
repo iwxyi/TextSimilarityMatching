@@ -7,11 +7,11 @@
 
 using namespace std;
 
-class JiabaSegment
+class JiebaSegment
 {
 public:
-	JiabaSegment(QString dict_path);
-	~JiabaSegment();
+	JiebaSegment(QString dict_path);
+	~JiebaSegment();
 
 	bool init();
 
